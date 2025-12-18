@@ -1,16 +1,16 @@
 // birinci tapsiriq
-function isValidNumber(phone) {
-    phone = String(phone);
-    if (phone.startsWith("+7") && phone.length ===12) {
-        return true;
-    }
-    return false;
+let a = 100;
+while (a <= 999) {
+      console.log(a);
+      a +=10;
 }
-console.log(isValidNumber("+71234567890"));
 
 
-// ikinci tapsiriq
-const capitalizeWords = t =>
-    t.replace(/\b\w/g, c => c.toUpperCase());
-
-console.log(capitalizeWords("hello my is harry"));
+// ikinci tapsprirq
+let b = 10;
+let sum = 0;
+while (b <= 99) {
+   sum += b;
+   b++;
+}
+console.log(sum);
