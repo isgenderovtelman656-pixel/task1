@@ -1,16 +1,17 @@
-// birinci tapsiriq
-let a = 100;
-while (a <= 999) {
-      console.log(a);
-      a +=10;
-}
+let text = prompt("metni daxil edin");
 
+let hasnumber = false
 
-// ikinci tapsprirq
-let b = 10;
-let sum = 0;
-while (b <= 99) {
-   sum += b;
-   b++;
+for (let i = 0; i < text.length; i++) {
+    if (text [i] >= '0' && text[i] <= '9') {
+        hasnumber = true;
+        break
+    }
 }
-console.log(sum);
+ 
+if (hasnumber) {
+    console.log("metnde reqem var");
+    
+} else {
+    console.log("metnde reqem yoxdur");
+}
