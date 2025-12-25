@@ -1,17 +1,11 @@
-let text = prompt("metni daxil edin");
+let arr = [7, 3, 8, 9, 2, 12];
+let newArr = [];
 
-let hasnumber = false
-
-for (let i = 0; i < text.length; i++) {
-    if (text [i] >= '0' && text[i] <= '9') {
-        hasnumber = true;
-        break
+for (let i = 0; i < arr.length; i++){
+    if (arr [i] < 5){
+        newArr.push(arr[i]);
+    }else if(arr[i] > 5){
+        newArr.unshift(arr[i]);
     }
 }
- 
-if (hasnumber) {
-    console.log("metnde reqem var");
-    
-} else {
-    console.log("metnde reqem yoxdur");
-}
+console.log(newArr);
