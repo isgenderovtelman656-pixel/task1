@@ -1,11 +1,12 @@
-let arr = [7, 3, 8, 9, 2, 12];
-let newArr = [];
+let arr = [1, 2, 3, 4, 5];
+let newArr = [...arr];
 
-for (let i = 0; i < arr.length; i++){
-    if (arr [i] < 5){
-        newArr.push(arr[i]);
-    }else if(arr[i] > 5){
-        newArr.unshift(arr[i]);
-    }
+newArr.pop();
+let increasedArr = [];
+
+for(let i = 0; i < newArr.length; i++){
+    increasedArr.push(newArr[i] + 2);
 }
-console.log(newArr);
+console.log(arr);
+console.log(increasedArr);
+
