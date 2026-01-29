@@ -1,10 +1,23 @@
-// birinci tapsirirq
-let arr = [1, 2, 3, 4, 5, 7, 9];
-
-let sum = 0;
-for (let i = 0; i < arr.length; i++){
-    if(arr[i] % 2 !== 0){
-        sum += arr[i];
+// birinci tapsiriq
+document.addEventListener("keydown", function(event){
+    if (event.key === "Enter") {
+        console.log("Enter");
+        
     }
-}
-console.log(sum);
+})
+
+// ikinci tapsiriq
+document.getElementById("myForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let password = 
+    document.getElementById("password").value;
+
+    if(password.length > 5){
+        console.log("icaze verildi");
+        
+    }else{
+        console.log("giris qadagandir");
+        
+    }
+});
