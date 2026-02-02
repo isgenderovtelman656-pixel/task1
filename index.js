@@ -1,23 +1,19 @@
-// birinci tapsiriq
-document.addEventListener("keydown", function(event){
-    if (event.key === "Enter") {
-        console.log("Enter");
-        
-    }
-})
+ const slides = document.querySelectorAll(".slide");
+  let index = 0;
 
-// ikinci tapsiriq
-document.getElementById("myForm").addEventListener("submit", function(e){
-    e.preventDefault();
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[i].classList.add("active");
+  }
 
-    let password = 
-    document.getElementById("password").value;
+  function next() {
+    index++;
+    if (index >= slides.length) index = 0;
+    showSlide(index);
+  }
 
-    if(password.length > 5){
-        console.log("icaze verildi");
-        
-    }else{
-        console.log("giris qadagandir");
-        
-    }
-});
+  function prev() {
+    index--;
+    if (index < 0) index = slides.length - 1;
+    showSlide(index);
+  }
