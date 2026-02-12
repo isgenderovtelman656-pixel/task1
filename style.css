@@ -1,20 +1,36 @@
-.gallery{
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  justify-content: center;
+body{
+  font-family: Arial;
+  text-align: center;
+  margin-top: 50px;
 }
 
-.gallery img{
-  width: 320px;
-  height: 320px;
-  object-fit: cover;
+.button-container{
+  margin-bottom: 30px;
+}
+
+.button-container button{
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 8px;
 }
 
-.gallery img.active{
-  width: 420px;
-  height: 420px;
+.image-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.image-container img{
+  width: 120px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+
+.section{
+  display: none;
+  margin-top: 30px;
+  font-size: 25px;
 }

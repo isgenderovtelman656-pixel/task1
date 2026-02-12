@@ -1,21 +1,31 @@
-  let imgs = document.querySelectorAll("img");
+let buttons = document.querySelectorAll(".button-container button");
+let images = document.querySelectorAll(".image-container img");
 
-  imgs[0].onclick = () => {
-    imgs.forEach(i => i.classList.remove("active"));
-    imgs[0].classList.add("active");
-  };
+function showSection(type){
+  if(type === "all"){
+    
+    images.forEach(img => img.style.display = "inline-block");
+    document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
+  } else {
+    
+    images.forEach(img => {
+      img.style.display = img.getAttribute("data-type") === type ? "inline-block" : "none";
+    });
+    document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
+    document.getElementById(type).style.display = "block";
+  }
+}
 
-  imgs[1].onclick = () => {
-    imgs.forEach(i => i.classList.remove("active"));
-    imgs[1].classList.add("active");
-  };
+buttons.forEach(btn => {
+  btn.addEventListener("click", function(){
+    let type = this.getAttribute("data-type");
+    showSection(type);
+  });
+});
 
-  imgs[2].onclick = () => {
-    imgs.forEach(i => i.classList.remove("active"));
-    imgs[2].classList.add("active");
-  };
-
-  imgs[3].onclick = () => {
-    imgs.forEach(i => i.classList.remove("active"));
-    imgs[3].classList.add("active");
-  };
+images.forEach(img => {
+  img.addEventListener("click", function(){
+    let type = this.getAttribute("data-type");
+    showSection(type);
+  });
+});
