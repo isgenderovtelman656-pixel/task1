@@ -1,31 +1,35 @@
-let buttons = document.querySelectorAll(".button-container button");
-let images = document.querySelectorAll(".image-container img");
+  const counters = document.querySelectorAll(".counter");
 
-function showSection(type){
-  if(type === "all"){
-    
-    images.forEach(img => img.style.display = "inline-block");
-    document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
-  } else {
-    
-    images.forEach(img => {
-      img.style.display = img.getAttribute("data-type") === type ? "inline-block" : "none";
-    });
-    document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
-    document.getElementById(type).style.display = "block";
-  }
+  counters.forEach(counter => {
+    const updateCounter = () => {
+      const target = +counter.getAttribute("data-target");
+      const current = +counter.innerText;
+
+      const increment = target / 100;
+
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment);
+        setTimeout(updateCounter, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCounter();
+  });
+
+
+
+const rates = { "USD": 1.70, "EUR": 1.84, "AZN": 1.00 };
+
+function convert() {
+    const amount = document.getElementById("in").value;
+    const from = document.getElementById("curFrom").value;
+    const to = document.getElementById("curTo").value;
+
+    const result = (amount * rates[from]) / rates[to];
+    document.getElementById("out").value = result.toFixed(2);
 }
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", function(){
-    let type = this.getAttribute("data-type");
-    showSection(type);
-  });
-});
-
-images.forEach(img => {
-  img.addEventListener("click", function(){
-    let type = this.getAttribute("data-type");
-    showSection(type);
-  });
-});
+document.addEventListener("input", convert);
+window.onload = convert;
